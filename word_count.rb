@@ -10,11 +10,11 @@ def word_count(list)
   end
   counts
 end
-raw_txt = %{godel escher bach bach}
-word_list = words_from_string(raw_txt)
-counts = word_count(word_list)
-sorted = counts.sort_by {|word, count| count}
-top_five = sorted.last(5)
+raw_txt = %w{godel escher bach bach}
+#word_list = words_from_string(raw_txt).join(" ")
+#counts = word_count(word_list)
+#sorted = counts.sort_by {|word, count| count}
+#top_five = sorted.last(5)
 =begin
 for i in 0...5
   word = top_five[i][0]
@@ -22,3 +22,4 @@ for i in 0...5
   puts "#{word}: #{count}"
 end
 =end
+puts word_count(raw_txt)

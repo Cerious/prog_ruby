@@ -16,6 +16,11 @@ class CsvReader
   end
 
   def number_of_each_isbn
+    isbz =  []
+    CSV.foreach(csv_file, headers: true) do |row|
+      book = BookInStock.new(row["ISBN"], row["Price"])
+      isbz << book.isbn 
+    end
   end
 
 end
